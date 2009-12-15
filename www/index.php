@@ -15,20 +15,17 @@ License: <a href="http://www.opensource.org/licenses/bsd-license.php">BSD</a>.
 <p>
 
 
-<h1>Matlab HdfImport/HdfExport</h1>
-Simple (de)serialization of Matlab datastructures to/from HDF5 files.
-Checkout the repository to get the sourcecode.
+<h2>Matlab HdfImport/HdfExport</h2>
+Simple (de)serialization of Matlab datastructures to/from HDF5 files. Download <a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/matlab.tar.gz?view=tar">link</a>.
 
-<h1>Python Hdf5</h1>
-Simple (de)serialization of Python datastructures to/from HDF5 files.
-Checkout the repository to get the sourcecode.
+<h2>Python Hdf5</h2>
+Simple (de)serialization of Python datastructures to/from HDF5 files. Download <a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/python.tar.gz?view=tar">link</a>.
 
-<h1>HdfTimeStrip</h1>
-HdfTimeStrip is a command-line utility to strip time-stamp information from HDF5 files, so that HDF5 files of identical content become binary duplicates.
-Checkout the repository to get the sourcecode.
+<h2>HdfTimeStrip</h2>
+HdfTimeStrip is a command-line utility to strip time-stamp information from HDF5 files, so that HDF5 files of identical content become binary duplicates. Download <a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/HdfTimeStrip.tar.gz?view=tar">link</a>.
 
 
-<h3>Links</h3>
+<h2>Links</h2>
 <ul>
 <li> <a href="http://www.hdfgroup.org/HDF5/">HDF5 homepage</a>.
 <li> <a href="http://sourceforge.net/projects/hdfutil/">project page</a> on sourceforge.
