@@ -12,7 +12,7 @@ Hdf5 utilities is a collection of utilities to ease the exchange of HDF5 files b
 <p>
 
 License: <a href="http://www.opensource.org/licenses/bsd-license.php">BSD</a>.
-
+<p>
 
 
 Link to <a href="http://sourceforge.net/projects/hdfutil/">project page</a> on sourceforge.
