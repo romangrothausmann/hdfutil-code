@@ -16,13 +16,13 @@ License: <a href="http://www.opensource.org/licenses/bsd-license.php">BSD</a>.
 
 
 <h2>Matlab HdfImport/HdfExport</h2>
-Simple (de)serialization of Matlab datastructures to/from HDF5 files. Download <a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/matlab.tar.gz?view=tar">link</a>.
+Simple (de)serialization of Matlab datastructures to/from HDF5 files [<a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/matlab.tar.gz?view=tar">download</a>].
 
 <h2>Python Hdf5</h2>
-Simple (de)serialization of Python datastructures to/from HDF5 files. Download <a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/python.tar.gz?view=tar">link</a>.
+Simple (de)serialization of Python datastructures to/from HDF5 files [<a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/python.tar.gz?view=tar">download</a>].
 
 <h2>HdfTimeStrip</h2>
-HdfTimeStrip is a command-line utility to strip time-stamp information from HDF5 files, so that HDF5 files of identical content become binary duplicates. Download <a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/HdfTimeStrip.tar.gz?view=tar">link</a>.
+HdfTimeStrip is a command-line utility to strip time-stamp information from HDF5 files, so that HDF5 files of identical content become binary duplicates [<a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/HdfTimeStrip.tar.gz?view=tar">download</a>].
 
 
 <h2>Links</h2>
