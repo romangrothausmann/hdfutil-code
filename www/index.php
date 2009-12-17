@@ -21,6 +21,9 @@ Simple (de)serialization of Matlab datastructures to/from HDF5 files [<a href="h
 <h2>Python Hdf5</h2>
 Simple (de)serialization of Python datastructures to/from HDF5 files [<a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/python.tar.gz?view=tar">download</a>].
 
+<h2>C++ utility functions</h2>
+Support function for the HDF5 C++ library for simple (de)serialization of scalars, vectors, matrices and N-dim tables of any dimension and datatype to HDF5 files [<a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/cpp.tar.gz?view=tar">download</a>].
+
 <h2>HdfTimeStrip</h2>
 HdfTimeStrip is a command-line utility to strip time-stamp information from HDF5 files, so that HDF5 files of identical content become binary duplicates [<a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/HdfTimeStrip.tar.gz?view=tar">download</a>].
 
