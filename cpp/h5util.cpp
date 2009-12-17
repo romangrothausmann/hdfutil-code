@@ -2,7 +2,7 @@
 * \file
 * Implementation of HDF5 utility functions
 */
-#include "rctl/util/h5util.hpp"
+#include "h5util.hpp"
 #include <math.h>
 #include <fstream>
 
