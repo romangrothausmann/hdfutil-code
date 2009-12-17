@@ -8,6 +8,7 @@
 #include <string>
 #pragma warning(push)
 #pragma warning(disable: 4127) // conditional expression is constant
+#pragma warning(disable: 4996) // 'std::copy': Function call with parameters that may be unsafe
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/numeric/ublas/matrix.hpp>
 #pragma warning(pop) // re-enable warning 4127
