@@ -42,11 +42,12 @@ static void GenerateTestData (int & a, float & b,
     // text string
     sa = "test";
 
-    // N-dimensional table
+    // 3D table with dimensions (2,3,4) 
     table.dims.resize(3);
     table.dims[0] = 2;
-    table.data[1] = 3;
-    table.data[2] = 4;
+    table.dims[1] = 3;
+    table.dims[2] = 4;
+    table.data.resize(2*3*4);
     for (size_t i = 0; i < 2*3*4; i++)
         table.data[i] = (float)i;
 }
