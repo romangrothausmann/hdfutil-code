@@ -1,7 +1,5 @@
-/**
-* \file
-* Implementation of HDF5 utility functions
-*/
+/* "h5util" HDF5 utility functions    *
+ * Developed by Fredrik Orderud, 2009 */
 #include "h5util.hpp"
 #include <math.h>
 #include <fstream>

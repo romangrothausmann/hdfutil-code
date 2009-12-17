@@ -1,8 +1,5 @@
-/**
-* \file
-* Utility functions for reading and writing to HDF5
-*/
-
+/* "h5util" HDF5 utility functions    *
+ * Developed by Fredrik Orderud, 2009 */
 #pragma once
 #include <vector>
 #include <string>

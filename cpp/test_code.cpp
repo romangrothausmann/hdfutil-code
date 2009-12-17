@@ -1,5 +1,5 @@
-/*         Real-time Contour Tracking Library (RCTL)         *
- *          primarily developed by Fredrik Orderud           */
+/* "h5util" HDF5 utility functions    *
+ * Developed by Fredrik Orderud, 2009 */
 #include "h5util.hpp"
 
 using namespace std;
