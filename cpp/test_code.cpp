@@ -1,4 +1,4 @@
-/* "h5util" HDF5 utility functions    *
+/* HdfUtil test code                  *
  * Developed by Fredrik Orderud, 2009 */
 #include "h5util.hpp"
 
@@ -54,7 +54,7 @@ static void GenerateTestData (int & a, float & b,
 
 
 void FileWrite (const std::string & filename) {
-    using namespace h5util;
+    using namespace hdfutil;
     //H5::Exception::dontPrint();
     H5::H5File h5file = H5::H5File(filename,  H5F_ACC_TRUNC);
 
@@ -83,7 +83,7 @@ void FileWrite (const std::string & filename) {
 }
 
 void FileLoad (const std::string & filename) {
-    using namespace h5util;
+    using namespace hdfutil;
     //H5::Exception::dontPrint();
     H5::H5File h5file = H5::H5File(filename, H5F_ACC_RDONLY);
 

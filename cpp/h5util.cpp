@@ -1,4 +1,4 @@
-/* "h5util" HDF5 utility functions    *
+/* HdfUtil HDF5 utility functions     *
  * Developed by Fredrik Orderud, 2009 */
 #include "h5util.hpp"
 #include <math.h>
@@ -27,7 +27,7 @@
 
 
 /** Retrieves the dimensions of the dataset */
-int h5util::GetDsDims (const H5::DataSet & dataset, int dims[3]) {
+int hdfutil::GetDsDims (const H5::DataSet & dataset, int dims[3]) {
 	H5::DataSpace dataspace = dataset.getSpace();
     bool simple = dataspace.isSimple();
     if (!simple)
@@ -47,7 +47,7 @@ int h5util::GetDsDims (const H5::DataSet & dataset, int dims[3]) {
 }
 
 
-std::string h5util::ReadString (const H5::CommonFG& group, const std::string & dsname) {
+std::string hdfutil::ReadString (const H5::CommonFG& group, const std::string & dsname) {
     const H5::DataSet & dataset = group.openDataSet(dsname);
 	try {
         H5::DataType type = dataset.getDataType();
@@ -60,7 +60,7 @@ std::string h5util::ReadString (const H5::CommonFG& group, const std::string & d
         throw std::runtime_error(error.c_str());
 	}
 }
-void h5util::WriteString(const H5::CommonFG& group, const std::string & dsname, const std::string & str) {
+void hdfutil::WriteString(const H5::CommonFG& group, const std::string & dsname, const std::string & str) {
     hsize_t dims[] = {1};
     H5::DataSpace dataspace(1, dims);       // 1 string
     H5::StrType   strtype  (0, str.size()); // string length
@@ -69,7 +69,7 @@ void h5util::WriteString(const H5::CommonFG& group, const std::string & dsname, 
 }
 
 
-bool h5util::HasDataSet (const H5::H5File & h5file, const std::string & name) {
+bool hdfutil::HasDataSet (const H5::H5File & h5file, const std::string & name) {
     hid_t loc_id = h5file.getLocId();
 #if H5_VERS_MINOR >= 8
     hid_t dataset_id = H5Dopen1( loc_id, name.c_str());
@@ -84,7 +84,7 @@ bool h5util::HasDataSet (const H5::H5File & h5file, const std::string & name) {
 }
 
 
-H5::DSetCreatPropList h5util::CreatePropList () {
+H5::DSetCreatPropList hdfutil::CreatePropList () {
 	H5::DSetCreatPropList plist;
 	hid_t dset_cplist = plist.getId();
 	// disable time-stamping of datasets
@@ -93,7 +93,7 @@ H5::DSetCreatPropList h5util::CreatePropList () {
 }
 
 
-bool h5util::FileExists (const std::string & filename) {
+bool hdfutil::FileExists (const std::string & filename) {
     std::ifstream testfile(filename.c_str());
     return testfile.is_open();
 }

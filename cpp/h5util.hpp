@@ -1,4 +1,4 @@
-/* "h5util" HDF5 utility functions    *
+/* HdfUtil HDF5 utility functions     *
  * Developed by Fredrik Orderud, 2009 */
 #pragma once
 #include <vector>
@@ -13,7 +13,7 @@
 #include <H5Cpp.h>
 
 /** Common utility functions for accessing HDF5 data. */
-namespace h5util {
+namespace hdfutil {
 using namespace boost::numeric;
 
 // workaround for visual-studio/gcc differences in handling template specialization
@@ -235,4 +235,4 @@ bool HasDataSet (const H5::H5File & h5file, const std::string & name);
 /** Checks whether a file exists, and can be opened. */
 bool FileExists (const std::string & filename);
 
-} // namespace "h5util"
+} // namespace hdfutil
