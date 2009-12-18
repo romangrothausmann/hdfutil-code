@@ -1,6 +1,6 @@
 # Hdf5 import/export script
 # Depends on the 'PyTables' library (http://www.pytables.org/).
-# by Fredrik Orderud, 2008
+# Developed by Fredrik Orderud, 2008.
 from numpy import array
 import tables
 

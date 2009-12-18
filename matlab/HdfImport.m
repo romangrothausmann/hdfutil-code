@@ -1,6 +1,6 @@
 function data = HdfImport (filename)
 % Imports and parses HDF files into a matlab datastructure.
-% by Fredrik Orderud, 2008
+% Developed by Fredrik Orderud, 2008.
 
 % read first group in HDF file
 hinfo = hdf5info(filename);

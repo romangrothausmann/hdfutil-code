@@ -1,4 +1,7 @@
-// auto-linking of HDF5 libraries
+/* HdfTimeStrip time stripper command-line utility *
+ * Developed by Fredrik Orderud, 2009              */
+
+ // auto-linking of HDF5 libraries
 #ifdef _WIN32
 #  ifdef _DEBUG
 #    ifdef HDF5CPP_USEDLL
