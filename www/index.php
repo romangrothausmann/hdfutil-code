@@ -7,6 +7,7 @@
 </head>
 <body>
 
+
 <h1>Hdf5 utilities</h1>
 Hdf5 utilities is a collection of utilities to ease the exchange of HDF5 files between C/C++, Matlab and Python. The long term goal is integration into the main HDF5 distribution.
 <p>
@@ -30,7 +31,8 @@ HdfTimeStrip is a command-line utility to strip time-stamp information from HDF5
 
 <h2>Links</h2>
 <ul>
-<li> <a href="http://www.hdfgroup.org/HDF5/">HDF5 homepage</a>.
+<li> <a href="http://www.hdfgroup.org/HDF5/">HDF5</a> home page.
+<li> <a href="http://www.hdfgroup.org/hdf-java-html/hdfview/">HDFView</a> file content viewer.
 <li> <a href="http://sourceforge.net/projects/hdfutil/">project page</a> on sourceforge.
 </ul>
 
