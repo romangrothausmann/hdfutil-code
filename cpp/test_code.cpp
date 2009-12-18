@@ -1,5 +1,6 @@
 /* HdfUtil test code                  *
  * Developed by Fredrik Orderud, 2009 */
+#define HDFUTIL_USE_BOOST
 #include "hdfutil.hpp"
 
 using namespace std;

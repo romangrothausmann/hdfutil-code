@@ -3,18 +3,20 @@
 #pragma once
 #include <vector>
 #include <string>
-#pragma warning(push)
-#pragma warning(disable: 4127) // conditional expression is constant
-#pragma warning(disable: 4996) // 'std::copy': Function call with parameters that may be unsafe
-#include <boost/numeric/ublas/vector.hpp>
-#include <boost/numeric/ublas/matrix.hpp>
-#pragma warning(pop) // re-enable warning 4127
+#ifdef HDFUTIL_USE_BOOST
+#  pragma warning(push)
+#  pragma warning(disable: 4127) // conditional expression is constant
+#  pragma warning(disable: 4996) // 'std::copy': Function call with parameters that may be unsafe
+#  include <boost/numeric/ublas/vector.hpp>
+#  include <boost/numeric/ublas/matrix.hpp>
+#  pragma warning(pop) // re-enable warning 4127
+   using namespace boost::numeric;
+#endif
 
 #include <H5Cpp.h>
 
 /** Common utility functions for accessing HDF5 data. */
 namespace hdfutil {
-using namespace boost::numeric;
 
 // workaround for visual-studio/gcc differences in handling template specialization
 #ifdef _WIN32
@@ -111,7 +113,7 @@ void WriteArray (H5::CommonFG& group, const std::string & dsname, const std::vec
     dset.write(&array[0], Type<T>() );
 }
 
-
+#ifdef HDFUTIL_USE_BOOST
 /** Read ublas::vector<T> objects. */
 template<typename T>
 ublas::vector<T> ReadVector (const H5::CommonFG& group, const std::string & dsname) {
@@ -168,7 +170,7 @@ void WriteMatrix(const H5::CommonFG& group, const std::string & dsname, const ub
     H5::DataSet dset = group.createDataSet(dsname, Type<T>(), dataspace, CreatePropList());
     dset.write(&matrix(0,0), Type<T>() );
 }
-
+#endif // HDFUTIL_USE_BOOST
 
 /** Read/write text strings. */
 std::string ReadString (const H5::CommonFG& group, const std::string & dsname);
