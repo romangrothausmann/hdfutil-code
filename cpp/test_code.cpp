@@ -1,6 +1,6 @@
 /* HdfUtil test code                  *
  * Developed by Fredrik Orderud, 2009 */
-#include "h5util.hpp"
+#include "hdfutil.hpp"
 
 using namespace std;
 typedef boost::numeric::ublas::vector<float> Vector;

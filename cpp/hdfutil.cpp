@@ -1,6 +1,6 @@
 /* HdfUtil HDF5 utility functions     *
  * Developed by Fredrik Orderud, 2009 */
-#include "h5util.hpp"
+#include "hdfutil.hpp"
 #include <math.h>
 #include <fstream>
 

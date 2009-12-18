@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="h5util"
+	Name="HdfUtil"
 	ProjectGUID="{41929DA7-7239-44FF-B561-523A0B87E4DA}"
 	RootNamespace="h5util"
 	Keyword="Win32Proj"
@@ -170,11 +170,11 @@
 	</References>
 	<Files>
 		<File
-			RelativePath=".\h5util.cpp"
+			RelativePath=".\hdfutil.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\h5util.hpp"
+			RelativePath=".\hdfutil.hpp"
 			>
 		</File>
 		<File
