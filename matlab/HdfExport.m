@@ -1,7 +1,7 @@
 function HdfExport (filename, data)
 % Exports matlab datastructure to HDF
 % WARNING: Does not support Matlab "cell" structures.
-% Developed by Fredrik Orderud, 2008.
+% Developed by Fredrik Orderud, 2009.
 
 % Write data to file
 writeparams(data, '/', filename, false);
