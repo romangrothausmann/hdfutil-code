@@ -1,5 +1,5 @@
 /* HdfTimeStrip time stripper command-line utility *
- * Developed by Fredrik Orderud, 2009              */
+ * Developed by Fredrik Orderud, 2010              */
 
  // auto-linking of HDF5 libraries
 #ifdef _WIN32
@@ -74,7 +74,7 @@ const static std::string TEMP_FILE = "temp_hdftimestrip.h5";
 /** Program entry point. */
 int main (int argc, const char* argv[]) {
     using namespace std;
-    cout << "HdfTimeStrip by Fredrik Orderud, 2009. Strips time-stamp information from HDF5 files, "
+    cout << "HdfTimeStrip by Fredrik Orderud, 2010. Strips time-stamp information from HDF5 files, "
          << "so that HDF5 files of identical content become binary duplicates." << endl;
 
  	if (argc < 2) {
