@@ -26,7 +26,7 @@ Simple (de)serialization of Python datastructures to/from HDF5 files [<a href="h
 Support function for the HDF5 C++ library for simple (de)serialization of scalars, vectors, matrices and N-dim tables of "any" datatype to HDF5 files [<a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/cpp.tar.gz?view=tar">download</a>].
 
 <h3>HdfTimeStrip</h3>
-HdfTimeStrip is a command-line utility to strip time-stamp information from HDF5 files, so that HDF5 files of identical content become binary duplicates [<a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/HdfTimeStrip.tar.gz?view=tar">download</a>].
+HdfTimeStrip is a command-line utility to strip time-stamp information from HDF5 files, so that HDF5 files of identical content become binary duplicates [<a href="http://hdfutil.svn.sourceforge.net/viewvc/hdfutil/HdfTimeStrip.tar.gz?view=tar">download</a>, <a href="https://sourceforge.net/projects/hdfutil/files/HdfTimeStrip.exe/download">Win32 binary</a>].
 
 <h3>Development status</h3>
 The utilities are fairly feature complete, and should be usable on most platforms "out of the box". There is, however, limited support for handling of dataset attributes in the current implementation. Certain datatypes, like e.g. complex numbers, are also not implemented at the time being. It should be straightforward to extend the implementation to suport any missing feature of desire. In that case, please send a patch to the project, so others can also benefit from your extensions.
