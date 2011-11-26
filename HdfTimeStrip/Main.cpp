@@ -26,6 +26,7 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include <stdexcept>
 #include <stdio.h>
 #include <H5Cpp.h>
 
@@ -64,7 +65,7 @@ static void parse_group (const H5::CommonFG & in_grp, H5::CommonFG & out_grp) {
             DataSet out_dset = out_grp.createDataSet(name, dtype, dspace, plist);
             parse_dataset(in_dset, out_dset);
         } else
-            throw std::exception("Unsupported object type");
+            throw std::logic_error("Unsupported object type");
     }
 }
 
@@ -94,7 +95,7 @@ int main (int argc, const char* argv[]) {
 		H5::H5File input (in_file,  H5F_ACC_RDONLY);
 		H5::H5File output(out_file, H5F_ACC_TRUNC);
 		parse_group(input, output);
-    } catch (const std::exception & e) {
+    } catch (const std::logic_error & e) {
         cerr << e.what();
         remove(out_file.c_str());
         return -1;
