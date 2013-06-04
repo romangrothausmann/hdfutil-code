@@ -1,5 +1,11 @@
-/* HdfTimeStrip time stripper command-line utility *
- * Developed by Fredrik Orderud, 2010              */
+const char PROGRAM_HEADER1[] = "HdfTimeStrip, Copyright (c) 2010-2012 Fredrik Orderud.";
+const char PROGRAM_HEADER2[] = "Strips time-stamp information from HDF5 files, so that identical HDF5 files become binary duplicates.";
+
+/* Dependencies:
+   - The HDF5 library 1.8 or newer.
+   - Environment variable: HDF_ROOT
+   - Windows tip: Buid against static HDF5 libraries to avoid any DLL dependencies.
+*/
 
  // auto-linking of HDF5 libraries
 #ifdef _WIN32
@@ -30,6 +36,7 @@
 #include <stdio.h>
 #include <H5Cpp.h>
 
+
 /** Copy each scalar/vector/matrix dataset element. */
 static void parse_dataset (const H5::DataSet & in_dset, H5::DataSet & out_dset) {
     H5::DataType dtype = in_dset.getDataType();
@@ -39,6 +46,7 @@ static void parse_dataset (const H5::DataSet & in_dset, H5::DataSet & out_dset) 
 	in_dset.read  (&buffer[0], dtype);
 	out_dset.write(&buffer[0], dtype);
 }
+
 
 /** Read/write each group of datasets. */
 static void parse_group (const H5::CommonFG & in_grp, H5::CommonFG & out_grp) {
@@ -69,17 +77,19 @@ static void parse_group (const H5::CommonFG & in_grp, H5::CommonFG & out_grp) {
     }
 }
 
+
 /** Name of temp file used when no output is specified. */
 const static std::string TEMP_FILE = "temp_hdftimestrip.h5";
+
 
 /** Program entry point. */
 int main (int argc, const char* argv[]) {
     using namespace std;
-    cout << "HdfTimeStrip by Fredrik Orderud, 2010. Strips time-stamp information from HDF5 files, "
-         << "so that HDF5 files of identical content become binary duplicates." << endl;
+    cout << PROGRAM_HEADER1 << endl;
 
  	if (argc < 2) {
-		cerr << "USAGE: HdfTimeStrip src_file [dst_file]" << endl;
+		cerr << PROGRAM_HEADER2 << endl
+             << "USAGE: HdfTimeStrip src_file [dst_file]" << endl;
 		return -1;
 	}
 
