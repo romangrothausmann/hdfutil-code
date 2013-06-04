@@ -1,5 +1,5 @@
 const char PROGRAM_HEADER1[] = "HdfTimeStrip, Copyright (c) 2010-2012 Fredrik Orderud.";
-const char PROGRAM_HEADER2[] = "Strips time-stamp information from HDF5 files, so that identical HDF5 files become binary duplicates.";
+const char PROGRAM_HEADER2[] = "Removes time-stamp information from HDF5 files, so that identical HDF5 files become binary duplicates.";
 
 /* Dependencies:
    - The HDF5 library 1.8 or newer.
@@ -88,7 +88,8 @@ int main (int argc, const char* argv[]) {
     cout << PROGRAM_HEADER1 << endl;
 
  	if (argc < 2) {
-		cerr << PROGRAM_HEADER2 << endl
+		cout << PROGRAM_HEADER2 << endl
+             << endl
              << "USAGE: HdfTimeStrip src_file [dst_file]" << endl;
 		return -1;
 	}
@@ -105,8 +106,8 @@ int main (int argc, const char* argv[]) {
 		H5::H5File input (in_file,  H5F_ACC_RDONLY);
 		H5::H5File output(out_file, H5F_ACC_TRUNC);
 		parse_group(input, output);
-    } catch (const std::logic_error & e) {
-        cerr << e.what();
+    } catch (const std::exception & e) {
+        cerr << e.what() << endl;
         remove(out_file.c_str());
         return -1;
     }
