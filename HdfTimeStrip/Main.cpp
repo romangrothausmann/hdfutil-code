@@ -42,7 +42,7 @@ static void parse_dataset (const H5::DataSet & in_dset, H5::DataSet & out_dset) 
     H5::DataType dtype = in_dset.getDataType();
     hsize_t      size  = in_dset.getStorageSize();
 
-    std::vector<unsigned char> buffer((unsigned int)size);
+    std::vector<unsigned char> buffer((size_t)size);
 	in_dset.read  (&buffer[0], dtype);
 	out_dset.write(&buffer[0], dtype);
 }
@@ -51,14 +51,16 @@ static void parse_dataset (const H5::DataSet & in_dset, H5::DataSet & out_dset) 
 /** Read/write each group of datasets. */
 static void parse_group (const H5::CommonFG & in_grp, H5::CommonFG & out_grp) {
     using namespace H5;
+
     hsize_t N = in_grp.getNumObjs();
-    for (size_t i = 0; i < N; i++) {
+    for (hsize_t i = 0; i < N; i++) {
         std::string name = in_grp.getObjnameByIdx(i);
         H5G_obj_t   type = in_grp.getObjTypeByIdx(i);
 
         if        (type == H5G_GROUP) {
             Group in_child  = in_grp.openGroup(name);
             Group out_child = out_grp.createGroup(name);
+
             // recursive parsing of child groups
             parse_group(in_child, out_child);
         } else if (type == H5G_DATASET) {
@@ -66,14 +68,16 @@ static void parse_group (const H5::CommonFG & in_grp, H5::CommonFG & out_grp) {
             DataType  dtype   = in_dset.getDataType();
             DataSpace dspace  = in_dset.getSpace();
 
-			// disable time-stamping of new datasets
+			// disable time-stamping of new datasets (no C++ API)
 			DSetCreatPropList plist;
 			H5Pset_obj_track_times(plist.getId(), false);
+
             // copy dataset content
             DataSet out_dset = out_grp.createDataSet(name, dtype, dspace, plist);
             parse_dataset(in_dset, out_dset);
-        } else
+        } else {
             throw std::logic_error("Unsupported object type");
+        }
     }
 }
 
